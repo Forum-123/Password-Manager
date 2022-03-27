@@ -13,6 +13,10 @@ filepath = os.path.join(directory, filename)
 if not os.path.isdir(directory):
     os.mkdir(directory)
 
+# File is created if it doesn't exist already
+if not os.path.isfile(filepath):
+    with open(filepath, 'w') as file:
+        pass
 
 class BasePasswordManager:
     # List of user's passwords, where last item is their current password
